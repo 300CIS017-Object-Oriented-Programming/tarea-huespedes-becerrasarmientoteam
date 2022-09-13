@@ -148,3 +148,27 @@ void Admin::agregarEvaluaciones() {
     evaluaciones[contIdEva] = newEvaluacion;
     contIdEva += 1;
 }
+
+void Admin::agregarPersona() {
+    Persona *newPersona = Persona();
+    int sel;
+    do{
+        cout << "Que tipo de persona quieres agregar?" << endl;
+        cout <<"1. Propietario" << endl << "2. Huesped"  << end <<  "-1. Cancelar " << endl << "Elija: ";
+        cin >> sel;
+        switch (sel) {
+            case 1:
+                //TODO metodo para agregar al mapa propietarios
+                break;
+            case 2:
+                //TODO metodo para agregar al mapa huespedes
+                break;
+            case -1:
+                cout << "Cancelado" << endl;
+                break;
+            default:
+                cout << "Comando no valido" << endl;
+        }
+    }while(sel != -1)
+
+}

@@ -22,6 +22,9 @@ class Admin {
 
         virtual ~Admin(); //Destructor.
 
+        //Metodos para agregar a los mapas
+        void agregarPersona();
+
         //Metodos para verificar la existencias de elementos en los mapas NO ordenados.
         bool existePersona(double ID);
         bool existePropietario(double ID);
