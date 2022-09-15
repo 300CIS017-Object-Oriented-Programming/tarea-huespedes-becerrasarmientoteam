@@ -4,9 +4,8 @@
 #include "Libreria.h"
 #include "Persona.h"
 
-class Huesped {
+class Huesped: public Persona{ //Huesped hereda todos los atributos de persona
     private:
-        Persona *datosPersona;
         string nombreClinica;
         string nombreLugarOrigen;
     public:
@@ -15,12 +14,10 @@ class Huesped {
         virtual ~Huesped(); //Destructor.
 
         //Metodos Getter.
-        Persona *getDatosPersona();
         string getNombreClinica();
         string getNombreLugarOrigen();
 
         //Metodos Setter.
-        void setDatosPersona(Persona *newDatosPersona);
         void setNombreClinica(string newNombreClinica);
         void setNombreLugarOrigen(string newNombreLugarOrigen);
 

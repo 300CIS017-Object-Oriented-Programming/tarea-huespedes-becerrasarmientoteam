@@ -4,7 +4,7 @@
 #include "Persona.h"
 #include "Hogar.h"
 
-class Propietario {
+class Propietario: public Persona{
     private:
         Persona *datosPersona;
         Hogar *Propiedad;

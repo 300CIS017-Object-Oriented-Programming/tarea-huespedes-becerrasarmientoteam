@@ -2,7 +2,7 @@
 #include "Admin.h"
 
 int main() {
-    auto admin = new Admin();
+    auto *admin = new Admin();
 
     int opc;
     do {
