@@ -1,15 +1,11 @@
 #include "Propietario.h"
 
-Propietario::Propietario() {
-    datosPersona = nullptr;
+Propietario::Propietario() : Persona() {
     Propiedad = nullptr;
     recibeHuespedes = true;
 }
 
 //Metodos Getter.
-Persona* Propietario::getDatosPersona() {
-    return datosPersona;
-}
 Hogar* Propietario::getPropiedad() {
     return Propiedad;
 }
@@ -18,9 +14,6 @@ bool Propietario::getRecibeHuespedes() {
 }
 
 //Metodos Setter.
-void Propietario::setDatosPersona(Persona *newDatosPersona) {
-    datosPersona = newDatosPersona;
-}
 void Propietario::setPropiedad(Hogar *newPropiedad) {
     Propiedad = newPropiedad;
 }
@@ -30,7 +23,7 @@ void Propietario::setRecibeHuespedes(bool newRecibeHuespedes) {
 
 ///////////////////////////////////////////////
 void Propietario::mostrarDatos() {
-    datosPersona->mostrarDatos();
+    this->mostrarDatosPersona();
     Propiedad->mostrarDatos();
     cout << "Recibe huespedes? (1: Si, 0: No): " << recibeHuespedes << endl;
 }

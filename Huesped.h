@@ -4,7 +4,7 @@
 #include "Libreria.h"
 #include "Persona.h"
 
-class Huesped: public Persona{ //Huesped hereda todos los atributos de persona
+class Huesped: public Persona { //Huesped hereda todos los atributos de persona
     private:
         string nombreClinica;
         string nombreLugarOrigen;

@@ -42,7 +42,7 @@ void Persona::setPuntaje(double newPuntaje) {
     puntaje = newPuntaje;
 }
 ///////////////////////////////////////////////
-void Persona::mostrarDatos() {
+void Persona::mostrarDatosPersona() {
     cout << "Nombre: " << nombre << endl;
     cout << "Sexo (Normal): ";
     if (sexo) {

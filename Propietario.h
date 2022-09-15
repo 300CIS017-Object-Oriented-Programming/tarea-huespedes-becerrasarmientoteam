@@ -4,9 +4,8 @@
 #include "Persona.h"
 #include "Hogar.h"
 
-class Propietario: public Persona{
+class Propietario: public Persona {
     private:
-        Persona *datosPersona;
         Hogar *Propiedad;
         bool recibeHuespedes;
     public:
@@ -15,12 +14,10 @@ class Propietario: public Persona{
         virtual ~Propietario(); //Destructor.
 
         //Metodos Getter.
-        Persona *getDatosPersona();
         Hogar *getPropiedad();
         bool getRecibeHuespedes();
 
         //Metodos Setter.
-        void setDatosPersona(Persona *newDatosPersona);
         void setPropiedad(Hogar *newPropiedad);
         void setRecibeHuespedes(bool newRecibeHuespedes);
 

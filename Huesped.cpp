@@ -1,6 +1,6 @@
 #include "Huesped.h"
 
-Huesped::Huesped() {
+Huesped::Huesped() : Persona() {
     nombreClinica = "";
     nombreLugarOrigen = "";
 }
@@ -24,6 +24,7 @@ void Huesped::setNombreLugarOrigen(string newNombreLugarOrigen) {
 
 ///////////////////////////////////////////////
 void Huesped::mostrarDatos() {
+    this->mostrarDatosPersona();
     cout << "Nombre de la Clinica en la que se situa el familiar: " << nombreClinica << endl;
     cout << "Nombre del lugar de origen del huesped: " << nombreLugarOrigen << endl;
 }

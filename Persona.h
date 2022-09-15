@@ -29,6 +29,6 @@ class Persona {
         void setFechaNacimiento(string newFecha);
         void setPuntaje(double newPuntaje);
         
-        void mostrarDatos();
+        void mostrarDatosPersona();
 };
 #endif
