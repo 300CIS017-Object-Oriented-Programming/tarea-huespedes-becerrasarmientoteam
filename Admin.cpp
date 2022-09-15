@@ -150,11 +150,11 @@ void Admin::agregarEvaluaciones() {
 }
 
 void Admin::agregarPersona() {
-    Persona *newPersona = Persona();
+    auto *newPersona =  new Persona();
     int sel;
     do{
         cout << "Que tipo de persona quieres agregar?" << endl;
-        cout <<"1. Propietario" << endl << "2. Huesped"  << end <<  "-1. Cancelar " << endl << "Elija: ";
+        cout <<"1. Propietario" << endl << "2. Huesped"  << endl <<  "-1. Cancelar " << endl << "Elija: ";
         cin >> sel;
         switch (sel) {
             case 1:
@@ -169,6 +169,6 @@ void Admin::agregarPersona() {
             default:
                 cout << "Comando no valido" << endl;
         }
-    }while(sel != -1)
+    }while(sel != -1);
 
 }
