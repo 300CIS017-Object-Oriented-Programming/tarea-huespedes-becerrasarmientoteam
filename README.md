@@ -38,7 +38,7 @@ Se esperan las siguientes funcionalidades para el prototipo
 
 ### DIAGRAMA UML
 * Diagrama UML del programa
-* ![UMLAlojamientogratuito.png](UMLAlojamientogratuito.png)
+* ![UMLAlojamiento.png](UMLAlojamiento.png)
 >Todos los participantes deben participar en la codificación de este ejercicio. Es importante entonces que haya evidencia de commits provenientes de todas las partes. Los commits deben seguir el siguiente estándar:
   * *NEW*: cuando se agregan nuevas funcionaliades. 
   * *MOD*: cuando se modifican funcionalidades existentes. 
