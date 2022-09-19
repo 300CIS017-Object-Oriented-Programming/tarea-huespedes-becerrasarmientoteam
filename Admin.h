@@ -11,7 +11,6 @@
 class Admin {
     private:
         int contIdReser, contIdEva;
-        unordered_map<double, Persona*> usuarios;
         unordered_map<double, Propietario*> propietarios;
         unordered_map<double, Huesped*> huespedes;
         unordered_map<double, Reserva*> reservas;
@@ -26,7 +25,6 @@ class Admin {
         void agregarPersona();
 
         //Metodos para verificar la existencias de elementos en los mapas NO ordenados.
-        bool existePersona(double ID);
         bool existePropietario(double ID);
         bool existeHuesped(double ID);
         bool existeReserva(double ID);

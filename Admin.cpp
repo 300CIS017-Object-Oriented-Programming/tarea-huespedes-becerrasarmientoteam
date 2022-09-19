@@ -22,12 +22,6 @@ Admin::~Admin() {
 }
 
 //Metodos para verificar la existencias de elementos en los mapas NO ordenados.
-bool Admin::existePersona(double ID) {
-    if (usuarios.find(ID) == usuarios.end()) {
-        return false;
-    }
-    return true;
-}
 bool Admin::existePropietario(double ID) {
     if (propietarios.find(ID) == propietarios.end()) {
         return false;
@@ -113,7 +107,7 @@ void Admin::agregarEvaluaciones() {
     cout << "Digite el ID del usuario: ";
     cin >> idUser;
 
-    if (!existePersona(idUser)) {
+    if (!existeHuesped(idUser)) {
         cout << "No se ha encontrado el usuario solicitado.\a" << endl;
         return;
     }
@@ -121,7 +115,7 @@ void Admin::agregarEvaluaciones() {
     cout << "Digite el ID del usuario a evaluar";
     cin >> idEvaluado;
 
-    if (!existePersona(idEvaluado)) {
+    if (!existePropietario(idEvaluado)) {
         cout << "No se ha encontrado el usuario a evaluar solicitado.\a" << endl;
         return;
     }
@@ -142,15 +136,14 @@ void Admin::agregarEvaluaciones() {
     newEvaluacion->setFecha(fecha);
     newEvaluacion->setNotaProm(notaProm);
     newEvaluacion->setComentarios(comentarios);
-    newEvaluacion->setEvaluador(usuarios.at(idUser));
-    newEvaluacion->setEvaluado(usuarios.at(idEvaluado));
+    newEvaluacion->setEvaluador(huespedes.at(idUser));
+    newEvaluacion->setEvaluado(propietarios.at(idEvaluado));
 
     evaluaciones[contIdEva] = newEvaluacion;
     contIdEva += 1;
 }
 
 void Admin::agregarPersona() {
-    auto *newPersona =  new Persona();
     int sel;
     do{
         cout << "Que tipo de persona quieres agregar?" << endl;
