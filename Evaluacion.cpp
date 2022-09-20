@@ -35,10 +35,10 @@ void Evaluacion::setNotaProm(double newNotaProm) {
 void Evaluacion::setComentarios(string newComentarios) {
     comentarios = newComentarios;
 }
-void Evaluacion::setEvaluado(Persona *newEvaluado) {
+void Evaluacion::setEvaluado(Propietario *newEvaluado) {
     evaluado = newEvaluado;
 }
-void Evaluacion::setEvaluador(Persona *newEvaluador) {
+void Evaluacion::setEvaluador(Huesped *newEvaluador) {
     evaluador = newEvaluador;
 }
 

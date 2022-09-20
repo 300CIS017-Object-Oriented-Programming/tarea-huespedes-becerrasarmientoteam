@@ -10,8 +10,8 @@ class Evaluacion {
         string fecha;
         double notaProm;
         string comentarios;
-        Persona *evaluado;
-        Persona *evaluador;
+        Propietario *evaluado;
+        Huesped *evaluador;
     public:
         Evaluacion(); //Constructor.
 
@@ -28,8 +28,8 @@ class Evaluacion {
         void setFecha(string newFecha);
         void setNotaProm(double newNotaProm);
         void setComentarios(string newComentarios);
-        void setEvaluado(Persona *evaluado);
-        void setEvaluador(Persona *evaluador);
+        void setEvaluado(Propietario *evaluado);
+        void setEvaluador(Huesped *evaluador);
 
         void mostrarDatos();
 
