@@ -1,7 +1,8 @@
 #ifndef HUESPED_H
 #define HUESPED_H
 
-#include "Libreria.h"
+#include <iostream>
+using namespace std;
 #include "Persona.h"
 
 class Huesped: public Persona { //Huesped hereda todos los atributos de persona

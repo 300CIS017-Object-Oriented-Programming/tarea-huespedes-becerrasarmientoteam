@@ -1,7 +1,8 @@
 #ifndef HOGAR_H
 #define HOGAR_H
 
-#include "Libreria.h"
+#include <iostream>
+using namespace std;
 
 class Hogar{
     private:

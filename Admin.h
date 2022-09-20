@@ -1,7 +1,8 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 
-#include "Libreria.h"
+#include <iostream>
+using namespace std;
 #include "Propietario.h"
 #include "Huesped.h"
 #include "Reserva.h"
