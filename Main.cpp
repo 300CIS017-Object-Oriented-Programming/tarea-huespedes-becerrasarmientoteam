@@ -10,7 +10,7 @@ int main() {
         cout << "              ALOJAMIENTO GRATUITO         " << endl;
         cout << "===========================================\n" << endl;
 
-        cout << "[1] Agregar/Editar informacion del Hogar de un Propietario." << endl;
+        cout << "[1] Editar informacion del Hogar de un Propietario." << endl;
         cout << "[2] Crear una reserva." << endl;
         cout << "[3] Eliminar una reserva." << endl;
         cout << "[4] Agregar evaluacion." << endl;
@@ -21,12 +21,15 @@ int main() {
         switch (opc)
         {
         case 1:
-            admin->crearReservas();
+            admin->actualizarInfoHogar();
             break;
         case 2:
-            admin->liberarReservas();
+            admin->crearReservas();
             break;
         case 3:
+            admin->liberarReservas();
+            break;
+        case 4:
             admin->agregarEvaluaciones();
             break;
         default:
