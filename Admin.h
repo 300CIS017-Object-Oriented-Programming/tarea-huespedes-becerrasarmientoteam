@@ -34,6 +34,7 @@ class Admin {
         void crearReservas();
         void liberarReservas();
         void agregarEvaluaciones();
+        void actualizarInfoHogar();
 };
 
 #endif

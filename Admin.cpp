@@ -178,6 +178,18 @@ Hogar* Admin::generarInformacionHogar(double idProp) {
     }
 }
 
+void Admin::actualizarInfoHogar() {
+    double  identificacion;
+    cout << "Digite el num de identificacion del usuario: ";
+    cin >> identificacion;
+    if(existePropietario(identificacion)){
+        Hogar *newHogar = generarInformacionHogar(identificacion);
+        propietarios.at(identificacion)->setPropiedad(newHogar);
+    } else{
+        cout << "Propietario inexistente" << endl;
+    }
+}
+
 void Admin::agregarPersona() {
     int sel;
     do{
@@ -206,48 +218,46 @@ void Admin::agregarPersona() {
         //Variables pertenecientes a la clase Huesped.
         string nombreClinica;
         string nombreLugarOrigen;
-        switch (sel) {
-            case 1:
 
-                auto *Propiedad = generarInformacionHogar(identificacion); //Creacion del nuevo hogar.
-                auto *newPropietario = new Propietario(); //Creacion del nuevo propietario.
+        //Comment: marcaba error al ejecutar esta funcion porque el switch no funcionaba, sin embargo la creacion de estas variables consumen memoria
+        if(sel == 1) {
+            auto *Propiedad = generarInformacionHogar(identificacion); //Creacion del nuevo hogar.
+            auto *newPropietario = new Propietario(); //Creacion del nuevo propietario.
+            newPropietario->setIdentificacion(identificacion);
+            newPropietario->setNombre(nombre);
+            newPropietario->setSexo(sexo);
+            newPropietario->setFechaNacimiento(fechaNacimiento);
+            newPropietario->setPropiedad(Propiedad);
 
-                //Asignar los valores del nuevo propietario.
-                newPropietario->setIdentificacion(identificacion);
-                newPropietario->setNombre(nombre);
-                newPropietario->setSexo(sexo);
-                newPropietario->setFechaNacimiento(fechaNacimiento);
-                newPropietario->setPropiedad(Propiedad);
+            propietarios[identificacion] = newPropietario; //Se agrega al mapa NO ordenado.
+            break;
+        }
+        else if(sel == 2) {
+            auto *newHuesped = new Huesped(); //Creacion del nuevo Huesped.
+            //Solicitud de los datos del nuevo Huesped.
+            cout << "Digite el nombre de la clínica en donde se ecuentra su familiar: ";
+            cin.ignore();
+            getline(cin, nombreClinica);
+            cout << "Digite su lugar de origen: ";
+            cin.ignore();
+            getline(cin, nombreLugarOrigen);
 
-                propietarios[identificacion] = newPropietario; //Se agrega al mapa NO ordenado.
-                break;
-            case 2:
-                //Solicitud de los datos del nuevo Huesped.
-                cout << "Digite el nombre de la clínica en donde se ecuentra su familiar: ";
-                cin.ignore();
-                getline(cin, nombreClinica);
-                cout << "Digite su lugar de origen: ";
-                cin.ignore();
-                getline(cin, nombreLugarOrigen);
+            //Asignar los valores del nuevo Huesped.
+            newHuesped->setIdentificacion(identificacion);
+            newHuesped->setNombre(nombre);
+            newHuesped->setSexo(sexo);
+            newHuesped->setFechaNacimiento(fechaNacimiento);
 
-                auto *newHuesped = new Huesped(); //Creacion del nuevo Huesped.
+            newHuesped->setNombreClinica(nombreClinica);
+            newHuesped->setNombreLugarOrigen(nombreLugarOrigen);
 
-                //Asignar los valores del nuevo Huesped.
-                newHuesped->setIdentificacion(identificacion);
-                newHuesped->setNombre(nombre);
-                newHuesped->setSexo(sexo);
-                newHuesped->setFechaNacimiento(fechaNacimiento);
-
-                newHuesped->setNombreClinica(nombreClinica);
-                newHuesped->setNombreLugarOrigen(nombreLugarOrigen);
-
-                huespedes[identificacion] = newHuesped; //Se agrega al mapa NO ordenado.
-                break;
-            case -1:
-                cout << "Cancelado" << endl;
-                break;
-            default:
-                cout << "Comando no valido" << endl;
+            huespedes[identificacion] = newHuesped; //Se agrega al mapa NO ordenado.
+        }
+        else if(sel == -1) {
+            cout << "Cancelado" << endl;
+        }
+        else{
+            cout << "Comando no valido" << endl;
         }
     }while(sel != -1);
 
