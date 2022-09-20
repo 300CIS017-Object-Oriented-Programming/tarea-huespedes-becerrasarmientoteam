@@ -15,7 +15,7 @@ class Propietario: public Persona {
 
         //Metodos Getter.
         Hogar *getPropiedad();
-        bool getRecibeHuespedes();
+        bool getRecibeHuespedes() const;
 
         //Metodos Setter.
         void setPropiedad(Hogar *newPropiedad);

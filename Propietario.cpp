@@ -9,7 +9,7 @@ Propietario::Propietario() : Persona() {
 Hogar* Propietario::getPropiedad() {
     return Propiedad;
 }
-bool Propietario::getRecibeHuespedes() {
+bool Propietario::getRecibeHuespedes() const {
     return recibeHuespedes;
 }
 

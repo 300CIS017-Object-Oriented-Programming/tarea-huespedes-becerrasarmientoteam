@@ -22,11 +22,11 @@ Huesped* Reserva::getHuesped() {
 }
 
 //Metodos Setter.
-void Reserva::setFechaInicio(string newFechaInicio) {
-    fechaInicio = newFechaInicio;
+void Reserva::setFechaInicio(string newFechaInicioIn) {
+    fechaInicio = newFechaInicioIn;
 }
-void Reserva::setFechaFinal(string newFechaFinal) {
-    fechaFinal = newFechaFinal;
+void Reserva::setFechaFinal(string newFechaFinalIn) {
+    fechaFinal = newFechaFinalIn;
 }
 void Reserva::setPropietario(Propietario *newPropietario) {
     propietario = newPropietario;
