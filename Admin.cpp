@@ -146,15 +146,84 @@ void Admin::agregarEvaluaciones() {
 void Admin::agregarPersona() {
     int sel;
     do{
+        //Variables pertenecientes a la clase Persona.
+        double identificacion;
+        string nombre;
+        bool sexo; //1: Hombre, 0: Mujer.
+        string fechaNacimiento;
+
+        //Solicitud de los nuevos datos del usuario.
+        cout << "Digite el num de identificacion del usuario: ";
+        cin >> identificacion;
+        cout << "Digite el nombre del usuario:";
+        cin.ignore();
+        getline(cin, nombre);
+        cout << "Digite el sexo del usuario (normal): 1: Masculino, 0: Femenino: ";
+        cin >> sexo;
+        cout << "Digite la fecha de nacimiento del usuario: ";
+        cin >> fechaNacimiento;
+
+        //Escoger el rol del nuevo usuario.
         cout << "Que tipo de persona quieres agregar?" << endl;
         cout <<"1. Propietario" << endl << "2. Huesped"  << endl <<  "-1. Cancelar " << endl << "Elija: ";
         cin >> sel;
+
+        //Variables pertenecientes a la clase Hogar.
+        string direccion;
+        int camasDispo;
+        bool alojarBebes;
+        string descripcion;
+
+        //Variables pertenecientes a la clase Huesped.
+        string nombreClinica;
+        string nombreLugarOrigen;
         switch (sel) {
             case 1:
-                //TODO metodo para agregar al mapa propietarios
+                //Solicitud de los datos del nuevo Hogar.
+                cout << "Digite la direccion del hogar: ";
+                cin.ignore();
+                getline(cin, direccion);
+                cout << "Digite las camas disponibles: ";
+                cin >> camasDispo;
+                cout << "Puede alojar bebes? 1: Si, 0: No";
+                cin >> alojarBebes;
+                cout << "Digite la descripcion del hogar: ";
+                cin.ignore();
+                getline(cin, descripcion);
+
+                auto *Propiedad = new Hogar(); //Creacion del nuevo hogar.
+                auto *newPropietario = new Propietario(); //Creacion del nuevo propietario.
+
+                //Asignar los valores del nuevo propietario.
+                newPropietario->setIdentificacion(identificacion);
+                newPropietario->setNombre(nombre);
+                newPropietario->setSexo(sexo);
+                newPropietario->setFechaNacimiento(fechaNacimiento);
+                newPropietario->setPropiedad(Propiedad);
+
+                propietarios[identificacion] = newPropietario; //Se agrega al mapa NO ordenado.
                 break;
             case 2:
-                //TODO metodo para agregar al mapa huespedes
+                //Solicitud de los datos del nuevo Huesped.
+                cout << "Digite el nombre de la clínica en donde se ecuentra su familiar: ";
+                cin.ignore();
+                getline(cin, nombreClinica);
+                cout << "Digite su lugar de origen: ";
+                cin.ignore();
+                getline(cin, nombreLugarOrigen);
+
+                auto *newHuesped = new Huesped(); //Creacion del nuevo Huesped.
+
+                //Asignar los valores del nuevo Huesped.
+                newHuesped->setIdentificacion(identificacion);
+                newHuesped->setNombre(nombre);
+                newHuesped->setSexo(sexo);
+                newHuesped->setFechaNacimiento(fechaNacimiento);
+
+                newHuesped->setNombreClinica(nombreClinica);
+                newHuesped->setNombreLugarOrigen(nombreLugarOrigen);
+
+                huespedes[identificacion] = newHuesped; //Se agrega al mapa NO ordenado.
                 break;
             case -1:
                 cout << "Cancelado" << endl;
