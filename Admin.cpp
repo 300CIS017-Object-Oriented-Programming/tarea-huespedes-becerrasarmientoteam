@@ -143,6 +143,41 @@ void Admin::agregarEvaluaciones() {
     contIdEva += 1;
 }
 
+Hogar* Admin::generarInformacionHogar(double idProp) {
+    //Variables pertenecientes a la clase Hogar.
+    string direccion;
+    int camasDispo;
+    bool alojarBebes;
+    string descripcion;
+
+    //Solicitud de los datos del nuevo Hogar.
+    cout << "Digite la direccion del hogar: ";
+    cin.ignore();
+    getline(cin, direccion);
+    cout << "Digite las camas disponibles: ";
+    cin >> camasDispo;
+    cout << "Puede alojar bebes? 1: Si, 0: No";
+    cin >> alojarBebes;
+    cout << "Digite la descripcion del hogar: ";
+    cin.ignore();
+    getline(cin, descripcion);
+
+    //Si NO hay un propietario que coincida con el ID, entonces se crea un nuevo Hogar.
+    if (!existePropietario(idProp)) {
+        auto *Propiedad = new Hogar(); //Creacion del nuevo hogar.
+        return Propiedad;
+    }
+    //En caso de que lo haya, simplemente se modifica la informacion.
+    else {
+        propietarios.at(idProp)->getPropiedad()->setDireccion(direccion);
+        propietarios.at(idProp)->getPropiedad()->setCamasDispo(camasDispo);
+        propietarios.at(idProp)->getPropiedad()->setpuedeAlojarBebes(alojarBebes);
+        propietarios.at(idProp)->getPropiedad()->setDescripcion(descripcion);
+
+        return nullptr; //Se retorna un valor nulo porque no hay necesidad de crear un objeto nuevo.
+    }
+}
+
 void Admin::agregarPersona() {
     int sel;
     do{
@@ -168,30 +203,13 @@ void Admin::agregarPersona() {
         cout <<"1. Propietario" << endl << "2. Huesped"  << endl <<  "-1. Cancelar " << endl << "Elija: ";
         cin >> sel;
 
-        //Variables pertenecientes a la clase Hogar.
-        string direccion;
-        int camasDispo;
-        bool alojarBebes;
-        string descripcion;
-
         //Variables pertenecientes a la clase Huesped.
         string nombreClinica;
         string nombreLugarOrigen;
         switch (sel) {
             case 1:
-                //Solicitud de los datos del nuevo Hogar.
-                cout << "Digite la direccion del hogar: ";
-                cin.ignore();
-                getline(cin, direccion);
-                cout << "Digite las camas disponibles: ";
-                cin >> camasDispo;
-                cout << "Puede alojar bebes? 1: Si, 0: No";
-                cin >> alojarBebes;
-                cout << "Digite la descripcion del hogar: ";
-                cin.ignore();
-                getline(cin, descripcion);
 
-                auto *Propiedad = new Hogar(); //Creacion del nuevo hogar.
+                auto *Propiedad = generarInformacionHogar(identificacion); //Creacion del nuevo hogar.
                 auto *newPropietario = new Propietario(); //Creacion del nuevo propietario.
 
                 //Asignar los valores del nuevo propietario.

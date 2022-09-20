@@ -10,9 +10,10 @@ int main() {
         cout << "              ALOJAMIENTO GRATUITO         " << endl;
         cout << "===========================================\n" << endl;
 
-        cout << "[1] Crear reserva." << endl;
-        cout << "[2] Eliminar una reserva." << endl;
-        cout << "[3] Crear una evaluacion." << endl;
+        cout << "[1] Agregar/Editar informacion del Hogar de un Propietario." << endl;
+        cout << "[2] Crear una reserva." << endl;
+        cout << "[3] Eliminar una reserva." << endl;
+        cout << "[4] Agregar evaluacion." << endl;
         cout << "[-1] Salir." << endl;
         cout << "Opcion a elegir: ";
         cin >> opc;

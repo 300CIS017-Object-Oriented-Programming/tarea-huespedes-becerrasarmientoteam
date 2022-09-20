@@ -30,6 +30,7 @@ class Admin {
         bool existeReserva(double ID);
         bool existeEvaluacion(double ID);
 
+        Hogar* generarInformacionHogar(double idProp); //TODO El metodo se esta usando solamente cuando se quiere crear un nuevo propietario. Ahora que se pueda usar también para modificar solamente la info de uno ya existente.
         void crearReservas();
         void liberarReservas();
         void agregarEvaluaciones();
