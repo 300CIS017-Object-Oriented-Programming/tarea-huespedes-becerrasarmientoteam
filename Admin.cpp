@@ -178,15 +178,15 @@ Hogar* Admin::generarInformacionHogar(double idProp) {
     }
 }
 
+//Metodo a usar en el menu para actualizar la info del hogar.
 void Admin::actualizarInfoHogar() {
     double  identificacion;
     cout << "Digite el num de identificacion del usuario: ";
     cin >> identificacion;
     if(existePropietario(identificacion)){
-        Hogar *newHogar = generarInformacionHogar(identificacion);
-        propietarios.at(identificacion)->setPropiedad(newHogar);
+        this->generarInformacionHogar(identificacion);
     } else{
-        cout << "Propietario inexistente" << endl;
+        cout << "Propietario inexistente\a" << endl;
     }
 }
 
