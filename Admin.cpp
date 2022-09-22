@@ -97,9 +97,9 @@ void Admin::liberarReservas() {
     reservas.at(idReser)->getPropietario()->setRecibeHuespedes(true);
 
     //Se ha borrado de TODAS las formas posibles.
-    reservas.at(idReser)->~Reserva();
-    delete reservas.at(idReser);
+    Reserva *reservTemp = reservas.at(idReser);
     reservas.erase(idReser);
+    delete reservTemp;
 }
 
 void Admin::agregarEvaluaciones() {

@@ -14,7 +14,7 @@ class Persona {
     public:
         Persona(); //Constructor.
 
-        virtual ~Persona(); //Destructor.
+        virtual ~Persona() = default; //Destructor.
 
         //Metodos Getter.
         double getIdentificacion();

@@ -4,7 +4,9 @@ Propietario::Propietario() : Persona() {
     Propiedad = nullptr;
     recibeHuespedes = true;
 }
-
+Propietario::~Propietario(){
+    delete Propiedad;
+}
 //Metodos Getter.
 Hogar* Propietario::getPropiedad() {
     return Propiedad;

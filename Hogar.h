@@ -13,7 +13,7 @@ class Hogar{
     public:
         Hogar(); //Constructor.
 
-        virtual ~Hogar(); //Destructor.
+        ~Hogar() = default; //Destructor.
 
         //Funciones Getter.
         string getDireccion();

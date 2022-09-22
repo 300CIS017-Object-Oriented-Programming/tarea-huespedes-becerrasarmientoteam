@@ -15,7 +15,7 @@ class Reserva {
     public:
         Reserva(); //Constructor.
 
-        virtual ~Reserva(); //Destructor.
+        ~Reserva() = default; //Destructor.
 
         //Metodos Getter.
         string getFechaInicio();

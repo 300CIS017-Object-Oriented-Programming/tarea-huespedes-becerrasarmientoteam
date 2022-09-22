@@ -20,7 +20,7 @@ class Admin {
         //TODO: Realizar el constructor de la clase.
         Admin(); //Constructor.
 
-        virtual ~Admin(); //Destructor.
+        ~Admin(); //Destructor.
 
         //Metodos para agregar a los mapas
         void agregarPersona();

@@ -12,7 +12,7 @@ class Huesped: public Persona { //Huesped hereda todos los atributos de persona
     public:
         Huesped(); //Constructor.
 
-        virtual ~Huesped(); //Destructor.
+        virtual ~Huesped() = default; //Destructor.
 
         //Metodos Getter.
         string getNombreClinica();

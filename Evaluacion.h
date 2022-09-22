@@ -16,7 +16,7 @@ class Evaluacion {
     public:
         Evaluacion(); //Constructor.
 
-        virtual ~Evaluacion(); //Destructor.
+        ~Evaluacion() = default; //Destructor.
 
         //Metodos Getter.
         string getFecha();
