@@ -121,23 +121,28 @@ void Admin::agregarEvaluaciones() {
     }
 
     string fecha, comentarios;
-    double notaProm;
+    double nota, antNota = propietarios.at(idEvaluado)->getPuntaje();
 
     cout << "Digite la fecha de realizacion de la evaluacion: ";
     cin >> fecha;
     cout << "Digite la nota que le va a asignar al usuario solicitado: ";
-    cin >> notaProm;
+    cin >> nota;
     cout << "Digite el comentario a realizar al usuario.";
     cin.ignore();
     getline(cin, comentarios);
 
+    auto notaProm = (antNota + nota) / 2; //Cambia el puntaje del evaluador.
+
+
     auto *newEvaluacion = new Evaluacion();
 
     newEvaluacion->setFecha(fecha);
-    newEvaluacion->setNotaProm(notaProm);
+    newEvaluacion->setNotaProm(nota);
     newEvaluacion->setComentarios(comentarios);
     newEvaluacion->setEvaluador(huespedes.at(idUser));
     newEvaluacion->setEvaluado(propietarios.at(idEvaluado));
+
+    newEvaluacion->getEvaluado()->setPuntaje(notaProm);
 
     evaluaciones[contIdEva] = newEvaluacion;
     contIdEva += 1;
