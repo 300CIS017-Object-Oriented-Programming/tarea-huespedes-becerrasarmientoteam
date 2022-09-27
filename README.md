@@ -36,8 +36,9 @@ Se esperan las siguientes funcionalidades para el prototipo
   * De formato al código fuente y corrija los errores menores que el revisor estático de CLION detecte antes de subir su código fuente al repositorio. 
   * Modifique el .gitignore para ignorar todos los archivos de trabajo que no se deberían considerar en el proyecto
 
-
-  
+### DIAGRAMA UML
+* Diagrama UML del programa
+* ![UMLAlojamiento.png](UMLAlojamiento.png)
 >Todos los participantes deben participar en la codificación de este ejercicio. Es importante entonces que haya evidencia de commits provenientes de todas las partes. Los commits deben seguir el siguiente estándar:
   * *NEW*: cuando se agregan nuevas funcionaliades. 
   * *MOD*: cuando se modifican funcionalidades existentes. 
